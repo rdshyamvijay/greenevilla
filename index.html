@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greene Villa Resort | Nature's Own</title>
+    <meta name="description" content="Experience lush greenery and absolute peace at Greene Villa, Palakkad.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 3D Leaves Canvas -->
+    <canvas id="leavesCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Greene Villa</div>
+        <div class="nav-links">
+            <a href="#location" class="btn-nav">Location</a>
+            <a href="#gallery" class="btn-nav">Gallery</a>
+            <a href="tel:+919447596138" class="btn-nav">Call Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <!-- The A-frame picture (Hero background) panning in -->
+        <div class="hero-bg" style="background-image: url('./resort.jpg');"></div>
+        <div class="hero-bg-overlay"></div>
+        
+        <!-- The Trees Frame that moves outwards -->
+        <div class="trees-frame" style="background-image: url('./trees.png');"></div>
+        
+        <!-- Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">Greene Villa</h1>
+            <p class="hero-subtitle">Nature's Own Resort</p>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll to explore</p>
+        </div>
+    </section>
+
+    <!-- Vertical Line that draws on scroll -->
+    <div class="story-line-container">
+        <div class="story-line"></div>
+    </div>
+
+    <!-- Story / Intro -->
+    <section id="story" class="section" style="padding-bottom: 60px;">
+        <div class="container text-center">
+            <h2 class="section-title reveal-text">Escape to Serenity</h2>
+            <p class="section-text reveal-text" style="margin-bottom: 0;">Experience the lush greenery and absolute peace at Greene Villa, Palakkad. A homestay crafted in harmony with nature, designed to disconnect you from the noise and reconnect you with tranquility.</p>
+        </div>
+    </section>
+
+    <!-- Location Section (Moved above review) -->
+    <section id="location" class="section" style="padding-top: 60px; padding-bottom: 60px;">
+        <div class="container text-center">
+            <h2 class="section-title reveal-text">Find Us Here</h2>
+            <p class="section-text reveal-text">Kollengode South, Kerala 678506, India</p>
+            
+            <a href="https://maps.app.goo.gl/tmeKxb8r6GaiCGN68" target="_blank" class="map-link reveal-text">
+                <div class="map-box">
+                    <div class="map-bg" style="background-image: url('./frontview_night.jpg');"></div>
+                    <div class="map-overlay">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span>Open in Map</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Review Section -->
+    <section id="reviews" class="section" style="padding-top: 60px;">
+        <div class="container text-center">
+            <div class="review-box reveal-text">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Amazing nature vibe and great hospitality. Highly recommended for a weekend getaway!"</p>
+                <span class="reviewer">- Google Reviewer</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid (Dynamic intersection reveals) -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title text-center reveal-text">A Glimpse of Heaven</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/544835933.jpg?k=c1b457be5ff544aa69d5a5cbada448ae13b8ed50cb226e006f06d78c950ad729&o=" alt="Greene Villa Exterior Full">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max500/633415496.jpg?k=c1f465b30cecd44595fc4a12ec04ad4361fb348ebc787662c87af69ff326773b&o=" alt="Bedroom view">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max500/799160663.jpg?k=f1cd15809ce37d3c8696c514fec956ab9e4d8e0a79f3b1ae31669d17c5ddbbde&o=" alt="Exterior view 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max300/695264146.jpg?k=cee34152a3b26bb62de7f79c87a091e62530f7fc7a109b6b2a85f8d0ecb13e65&o=" alt="Nature surrounding">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max300/633413882.jpg?k=e6f2c3f1a99e6522ecdb2745d89badaa9d01b2415b71d01f627445ac09e8a88d&o=" alt="Amenities">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max500/544836097.jpg?k=9b936768527cfd47c11325b1bd8eb1807419d79776f462b06218573d389a5448&o=" alt="Room detail">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <h2 class="section-title">Ready to Experience Nature?</h2>
+            <div class="cta-buttons">
+                <a href="tel:+919447596138" class="btn btn-primary">Call Ravikumar</a>
+                <a href="tel:+918248953685" class="btn btn-primary">Call Mylsamy</a>
+                <a href="https://wa.me/919447596138" target="_blank" class="btn btn-whatsapp">WhatsApp Us</a>
+            </div>
+            <p class="footer-credits">© 2026 Greene Villa. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
