@@ -2,129 +2,382 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#fafbf9">
     <title>Greene Villa Resort | Nature's Own</title>
-    <meta name="description" content="Experience lush greenery and absolute peace at Greene Villa, Palakkad.">
+    <meta name="description" content="A homestay in Palakkad, Kerala. Private indoor pool, A-frame stays, and absolute quiet.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 3D Leaves Canvas -->
-    <canvas id="leavesCanvas"></canvas>
+    <!-- 3D Leaves Canvas (DO NOT REMOVE — wired to script.js) -->
+    <canvas id="leavesCanvas" aria-hidden="true"></canvas>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">Greene Villa</div>
+    <nav class="navbar" aria-label="Primary">
+        <a href="#hero" class="logo">
+            <span class="logo__mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+                    <path d="M12 3l8 9-8 9-8-9 8-9z"/>
+                    <path d="M12 8l4 4-4 4-4-4 4-4z"/>
+                </svg>
+            </span>
+            <span class="logo__text">Greene Villa</span>
+        </a>
         <div class="nav-links">
-            <a href="#location" class="btn-nav">Location</a>
             <a href="#gallery" class="btn-nav">Gallery</a>
-            <a href="tel:+919447596138" class="btn-nav">Call Now</a>
+            <a href="#location" class="btn-nav">Location</a>
+            <a href="tel:+919447596138" class="btn-nav btn-nav--accent">
+                <span class="btn-nav__dot" aria-hidden="true"></span>
+                Call
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (animation hooks preserved) -->
     <section id="hero" class="hero-section">
-        <!-- The A-frame picture (Hero background) panning in -->
         <div class="hero-bg" style="background-image: url('./resort.jpg');"></div>
         <div class="hero-bg-overlay"></div>
-        
-        <!-- The Trees Frame that moves outwards -->
         <div class="trees-frame" style="background-image: url('./trees.png');"></div>
-        
-        <!-- Content -->
+
         <div class="hero-content">
-            <h1 class="hero-title">Greene Villa</h1>
-            <p class="hero-subtitle">Nature's Own Resort</p>
+            <span class="hero-eyebrow">Palakkad &middot; Kerala</span>
+            <h1 class="hero-title">Greene<br><em>Villa</em></h1>
+            <p class="hero-subtitle">Nature&#39;s own resort</p>
         </div>
-        
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
+
+        <div class="scroll-indicator" aria-hidden="true">
+            <div class="mouse"><div class="wheel"></div></div>
             <p>Scroll to explore</p>
         </div>
     </section>
 
-    <!-- Vertical Line that draws on scroll -->
-    <div class="story-line-container">
-        <div class="story-line"></div>
-    </div>
+    <!-- Story line (animation hook preserved) -->
+    <div class="story-line-container"><div class="story-line"></div></div>
 
     <!-- Story / Intro -->
-    <section id="story" class="section" style="padding-bottom: 60px;">
-        <div class="container text-center">
-            <h2 class="section-title reveal-text">Escape to Serenity</h2>
-            <p class="section-text reveal-text" style="margin-bottom: 0;">Experience the lush greenery and absolute peace at Greene Villa, Palakkad. A homestay crafted in harmony with nature, designed to disconnect you from the noise and reconnect you with tranquility.</p>
+    <section id="story" class="section section--intro">
+        <div class="container container--narrow">
+            <span class="kicker reveal-text">A homestay, not a hotel</span>
+            <h2 class="section-title reveal-text">Escape to <em>serenity.</em></h2>
+            <p class="section-text reveal-text">Lush greenery and absolute peace, crafted in harmony with the Western Ghats. Designed to disconnect you from the noise and reconnect you with the slow rhythm of Kerala.</p>
+            <ul class="quick-facts reveal-text">
+                <li><span class="quick-facts__num">2</span><span>stay types</span></li>
+                <li><span class="quick-facts__num">24/7</span><span>private hosts</span></li>
+                <li><span class="quick-facts__num">0</span><span>distractions</span></li>
+            </ul>
         </div>
     </section>
 
-    <!-- Location Section (Moved above review) -->
-    <section id="location" class="section" style="padding-top: 60px; padding-bottom: 60px;">
-        <div class="container text-center">
-            <h2 class="section-title reveal-text">Find Us Here</h2>
-            <p class="section-text reveal-text">Kollengode South, Kerala 678506, India</p>
-            
-            <a href="https://maps.app.goo.gl/tmeKxb8r6GaiCGN68" target="_blank" class="map-link reveal-text">
+    <!-- Amenities -->
+    <section id="amenities" class="section section--amenities">
+        <div class="container">
+            <header class="section-head reveal-text">
+                <span class="kicker">What&#39;s inside</span>
+                <h2 class="section-title">Everything you need.<br><em>Nothing you don&#39;t.</em></h2>
+            </header>
+
+            <div class="bento reveal-text">
+                <article class="amenity amenity--feature amenity--pool">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 18c2.5 0 2.5-1.5 5-1.5s2.5 1.5 5 1.5 2.5-1.5 5-1.5 2.5 1.5 5 1.5"/>
+                            <path d="M2 14c2.5 0 2.5-1.5 5-1.5s2.5 1.5 5 1.5 2.5-1.5 5-1.5 2.5 1.5 5 1.5"/>
+                            <path d="M7 12V6a2 2 0 0 1 2-2"/>
+                            <path d="M17 12V6a2 2 0 0 0-2-2"/>
+                        </svg>
+                    </div>
+                    <div class="amenity__copy">
+                        <span class="amenity__tag">Signature</span>
+                        <h3>Private indoor pool</h3>
+                        <p>Yours alone. Climate-controlled, glass-bordered, open whenever you want a swim.</p>
+                    </div>
+                </article>
+
+                <article class="amenity amenity--feature amenity--massage">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3v3"/>
+                            <path d="M5.6 5.6l2.1 2.1"/>
+                            <path d="M18.4 5.6l-2.1 2.1"/>
+                            <path d="M3 12h3"/>
+                            <path d="M18 12h3"/>
+                            <circle cx="12" cy="13" r="4.5"/>
+                            <path d="M9 18l-1 3"/>
+                            <path d="M15 18l1 3"/>
+                        </svg>
+                    </div>
+                    <div class="amenity__copy">
+                        <span class="amenity__tag">Wellness</span>
+                        <h3>Ayurveda &amp; steam</h3>
+                        <p>Traditional Kerala oil massage and a private steam bath, on request.</p>
+                    </div>
+                </article>
+
+                <article class="amenity">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+                    </div>
+                    <h3>A-frame &amp; traditional stays</h3>
+                </article>
+
+                <article class="amenity">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1"/><path d="M3 8h15v7a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M7 3v2M11 3v2M15 3v2"/></svg>
+                    </div>
+                    <h3>Vegetarian breakfast</h3>
+                </article>
+
+                <article class="amenity">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l5 5-5 12-5-12 5-5z"/><path d="M7 8h10"/></svg>
+                    </div>
+                    <h3>Total privacy</h3>
+                </article>
+
+                <article class="amenity">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 13a10 10 0 0 1 14 0"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/></svg>
+                    </div>
+                    <h3>Free Wi-Fi</h3>
+                </article>
+
+                <article class="amenity">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="7" width="18" height="11" rx="2"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>
+                    </div>
+                    <h3>On-site parking</h3>
+                </article>
+
+                <article class="amenity">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 19l4-9 4 5 4-7 6 11z"/><circle cx="17" cy="6" r="2"/></svg>
+                    </div>
+                    <h3>Trekking &amp; off-road</h3>
+                </article>
+
+                <article class="amenity">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><circle cx="10" cy="8" r="3.5"/><path d="M17 5l2 2-2 2"/><path d="M21 9l-2 2 2 2"/></svg>
+                    </div>
+                    <h3>Party hall &amp; events</h3>
+                </article>
+
+                <article class="amenity">
+                    <div class="amenity__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="6" cy="9" r="1.6"/><circle cx="10" cy="6" r="1.6"/><circle cx="14" cy="6" r="1.6"/><circle cx="18" cy="9" r="1.6"/><path d="M6 15c0-3 3-4 6-4s6 1 6 4-2 5-6 5-6-2-6-5z"/></svg>
+                    </div>
+                    <h3>Pet friendly</h3>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery: three dropdowns by folder -->
+    <section id="gallery" class="section section--gallery">
+        <div class="container">
+            <header class="section-head section-head--center reveal-text">
+                <span class="kicker">A glimpse of heaven</span>
+                <h2 class="section-title">Walk through the villa.</h2>
+                <p class="section-text">Tap a room, swipe sideways through the photos.</p>
+            </header>
+
+            <div class="dropdowns reveal-text">
+                <article class="dropdown">
+                    <button type="button" class="dropdown__trigger" aria-expanded="false" aria-controls="panel-full">
+                        <div class="dropdown__cover" aria-hidden="true">
+                            <div class="dropdown__cover-img" style="background-image:url('Full%20Villa/544835933.jpg');"></div>
+                        </div>
+                        <div class="dropdown__meta">
+                            <span class="dropdown__index">01</span>
+                            <h3 class="dropdown__title">The Full Villa</h3>
+                            <span class="dropdown__count">7 photos &middot; interiors</span>
+                        </div>
+                        <span class="dropdown__chevron" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </button>
+                    <div class="dropdown__panel" id="panel-full" role="region">
+                        <div class="dropdown__inner">
+                            <div class="photo-strip">
+                                <a class="photo-strip__item" href="Full%20Villa/544835933.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Full%20Villa/544835933.jpg" alt="Full villa exterior"></a>
+                                <a class="photo-strip__item" href="Full%20Villa/544836084.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Full%20Villa/544836084.jpg" alt="Full villa interior detail"></a>
+                                <a class="photo-strip__item" href="Full%20Villa/544836097.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Full%20Villa/544836097.jpg" alt="Full villa lounge"></a>
+                                <a class="photo-strip__item" href="Full%20Villa/633413879.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Full%20Villa/633413879.jpg" alt="Full villa bedroom"></a>
+                                <a class="photo-strip__item" href="Full%20Villa/633413882.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Full%20Villa/633413882.jpg" alt="Full villa bath"></a>
+                                <a class="photo-strip__item" href="Full%20Villa/633413894.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Full%20Villa/633413894.jpg" alt="Full villa view"></a>
+                                <a class="photo-strip__item" href="Full%20Villa/633415496.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Full%20Villa/633415496.jpg" alt="Full villa room"></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="dropdown">
+                    <button type="button" class="dropdown__trigger" aria-expanded="false" aria-controls="panel-superior">
+                        <div class="dropdown__cover" aria-hidden="true">
+                            <div class="dropdown__cover-img" style="background-image:url('Superior%20A%20Frame%20Villa/799160663.jpg');"></div>
+                        </div>
+                        <div class="dropdown__meta">
+                            <span class="dropdown__index">02</span>
+                            <h3 class="dropdown__title">Superior A-Frame</h3>
+                            <span class="dropdown__count">8 photos &middot; signature stay</span>
+                        </div>
+                        <span class="dropdown__chevron" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </button>
+                    <div class="dropdown__panel" id="panel-superior" role="region">
+                        <div class="dropdown__inner">
+                            <div class="photo-strip">
+                                <a class="photo-strip__item" href="Superior%20A%20Frame%20Villa/799160663.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Superior%20A%20Frame%20Villa/799160663.jpg" alt="A-frame exterior"></a>
+                                <a class="photo-strip__item" href="Superior%20A%20Frame%20Villa/799160656.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Superior%20A%20Frame%20Villa/799160656.jpg" alt="A-frame view 1"></a>
+                                <a class="photo-strip__item" href="Superior%20A%20Frame%20Villa/799160659.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Superior%20A%20Frame%20Villa/799160659.jpg" alt="A-frame view 2"></a>
+                                <a class="photo-strip__item" href="Superior%20A%20Frame%20Villa/799160660.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Superior%20A%20Frame%20Villa/799160660.jpg" alt="A-frame view 3"></a>
+                                <a class="photo-strip__item" href="Superior%20A%20Frame%20Villa/799160661.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Superior%20A%20Frame%20Villa/799160661.jpg" alt="A-frame view 4"></a>
+                                <a class="photo-strip__item" href="Superior%20A%20Frame%20Villa/799160664.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Superior%20A%20Frame%20Villa/799160664.jpg" alt="A-frame view 5"></a>
+                                <a class="photo-strip__item" href="Superior%20A%20Frame%20Villa/799160666.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Superior%20A%20Frame%20Villa/799160666.jpg" alt="A-frame view 6"></a>
+                                <a class="photo-strip__item" href="Superior%20A%20Frame%20Villa/unnamed.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="Superior%20A%20Frame%20Villa/unnamed.webp" alt="A-frame extra"></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="dropdown">
+                    <button type="button" class="dropdown__trigger" aria-expanded="false" aria-controls="panel-outdoor">
+                        <div class="dropdown__cover" aria-hidden="true">
+                            <div class="dropdown__cover-img" style="background-image:url('outdoor/695264146.jpg');"></div>
+                        </div>
+                        <div class="dropdown__meta">
+                            <span class="dropdown__index">03</span>
+                            <h3 class="dropdown__title">Outdoor &amp; Grounds</h3>
+                            <span class="dropdown__count">12 photos &middot; gardens, pool, surroundings</span>
+                        </div>
+                        <span class="dropdown__chevron" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </button>
+                    <div class="dropdown__panel" id="panel-outdoor" role="region">
+                        <div class="dropdown__inner">
+                            <div class="photo-strip">
+                                <a class="photo-strip__item" href="outdoor/695264146.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/695264146.jpg" alt="Outdoor 1"></a>
+                                <a class="photo-strip__item" href="outdoor/695294310.jpg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/695294310.jpg" alt="Outdoor 2"></a>
+                                <a class="photo-strip__item" href="outdoor/2026-02-12.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/2026-02-12.webp" alt="Outdoor 3"></a>
+                                <a class="photo-strip__item" href="outdoor/unnamed.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/unnamed.webp" alt="Outdoor 4"></a>
+                                <a class="photo-strip__item" href="outdoor/unnamed%20%281%29.webp" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/unnamed%20%281%29.webp" alt="Outdoor 5"></a>
+                                <a class="photo-strip__item" href="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.36.jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.36.jpeg" alt="Outdoor 6"></a>
+                                <a class="photo-strip__item" href="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.38.jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.38.jpeg" alt="Outdoor 7"></a>
+                                <a class="photo-strip__item" href="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.38%20%281%29.jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.38%20%281%29.jpeg" alt="Outdoor 8"></a>
+                                <a class="photo-strip__item" href="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.39.jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.39.jpeg" alt="Outdoor 9"></a>
+                                <a class="photo-strip__item" href="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.39%20%281%29.jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.39%20%281%29.jpeg" alt="Outdoor 10"></a>
+                                <a class="photo-strip__item" href="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.40.jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.17.40.jpeg" alt="Outdoor 11"></a>
+                                <a class="photo-strip__item" href="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.29.19%20%281%29.jpeg" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="outdoor/WhatsApp%20Image%202026-04-08%20at%2015.29.19%20%281%29.jpeg" alt="Outdoor 12"></a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review -->
+    <section id="reviews" class="section section--reviews">
+        <div class="container container--narrow">
+            <article class="review reveal-text">
+                <div class="review__stars" aria-label="5 out of 5 stars">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14 2 9.27l6.91-1.01z"/></svg>
+                </div>
+                <p class="review__text">&ldquo;Amazing nature vibe and great hospitality. Highly recommended for a weekend getaway.&rdquo;</p>
+                <div class="review__meta">
+                    <span class="review__author">Verified guest</span>
+                    <span class="review__source">via Google</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="section section--location">
+        <div class="container">
+            <header class="section-head section-head--center reveal-text">
+                <span class="kicker">Find us</span>
+                <h2 class="section-title">Kollengode South.</h2>
+                <p class="section-text">Kerala 678506, India &middot; 60 min from Coimbatore Airport</p>
+            </header>
+
+            <a href="https://maps.app.goo.gl/tmeKxb8r6GaiCGN68" target="_blank" rel="noopener" class="map-link reveal-text">
                 <div class="map-box">
                     <div class="map-bg" style="background-image: url('./frontview_night.jpg');"></div>
+                    <div class="map-grid" aria-hidden="true"></div>
                     <div class="map-overlay">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        <span>Open in Map</span>
+                        <span class="map-overlay__pin" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 22s8-7 8-13a8 8 0 0 0-16 0c0 6 8 13 8 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                        </span>
+                        <span class="map-overlay__label">Open in Google Maps</span>
+                        <span class="map-overlay__sub">Live directions, one tap</span>
                     </div>
                 </div>
             </a>
         </div>
     </section>
 
-    <!-- Review Section -->
-    <section id="reviews" class="section" style="padding-top: 60px;">
-        <div class="container text-center">
-            <div class="review-box reveal-text">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Amazing nature vibe and great hospitality. Highly recommended for a weekend getaway!"</p>
-                <span class="reviewer">- Google Reviewer</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Grid (Dynamic intersection reveals) -->
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2 class="section-title text-center reveal-text">A Glimpse of Heaven</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/544835933.jpg?k=c1b457be5ff544aa69d5a5cbada448ae13b8ed50cb226e006f06d78c950ad729&o=" alt="Greene Villa Exterior Full">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max500/633415496.jpg?k=c1f465b30cecd44595fc4a12ec04ad4361fb348ebc787662c87af69ff326773b&o=" alt="Bedroom view">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max500/799160663.jpg?k=f1cd15809ce37d3c8696c514fec956ab9e4d8e0a79f3b1ae31669d17c5ddbbde&o=" alt="Exterior view 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max300/695264146.jpg?k=cee34152a3b26bb62de7f79c87a091e62530f7fc7a109b6b2a85f8d0ecb13e65&o=" alt="Nature surrounding">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max300/633413882.jpg?k=e6f2c3f1a99e6522ecdb2745d89badaa9d01b2415b71d01f627445ac09e8a88d&o=" alt="Amenities">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max500/544836097.jpg?k=9b936768527cfd47c11325b1bd8eb1807419d79776f462b06218573d389a5448&o=" alt="Room detail">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer / CTA -->
     <footer class="footer">
-        <div class="container text-center">
-            <h2 class="section-title">Ready to Experience Nature?</h2>
-            <div class="cta-buttons">
-                <a href="tel:+919447596138" class="btn btn-primary">Call Ravikumar</a>
-                <a href="tel:+918248953685" class="btn btn-primary">Call Mylsamy</a>
-                <a href="https://wa.me/919447596138" target="_blank" class="btn btn-whatsapp">WhatsApp Us</a>
+        <div class="container">
+            <div class="footer__head reveal-text">
+                <span class="kicker">Book direct</span>
+                <h2 class="footer__title">Ready to experience nature?</h2>
+                <p class="footer__sub">Speak to your hosts &mdash; no agents, no platforms.</p>
             </div>
-            <p class="footer-credits">© 2026 Greene Villa. All Rights Reserved.</p>
+
+            <div class="cta-buttons reveal-text">
+                <a href="tel:+919447596138" class="cta">
+                    <span class="cta__top">
+                        <span class="cta__role">Host</span>
+                        <span class="cta__name">Ravikumar</span>
+                    </span>
+                    <span class="cta__bottom">
+                        <span class="cta__phone">+91 94475 96138</span>
+                        <span class="cta__action">Call now
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                        </span>
+                    </span>
+                </a>
+                <a href="tel:+918248953685" class="cta">
+                    <span class="cta__top">
+                        <span class="cta__role">Host</span>
+                        <span class="cta__name">Mylsamy</span>
+                    </span>
+                    <span class="cta__bottom">
+                        <span class="cta__phone">+91 82489 53685</span>
+                        <span class="cta__action">Call now
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                        </span>
+                    </span>
+                </a>
+                <a href="https://wa.me/919447596138" target="_blank" rel="noopener" class="cta cta--whatsapp">
+                    <span class="cta__top">
+                        <span class="cta__role">Quick reply</span>
+                        <span class="cta__name">WhatsApp</span>
+                    </span>
+                    <span class="cta__bottom">
+                        <span class="cta__phone">Usually replies in minutes</span>
+                        <span class="cta__action">Open chat
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                        </span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="footer__base">
+                <span class="footer__credits">&copy; 2026 Greene Villa. All rights reserved.</span>
+                <span class="footer__place">Palakkad, Kerala</span>
+            </div>
         </div>
     </footer>
 
